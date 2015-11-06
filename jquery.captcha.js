@@ -100,7 +100,7 @@ $.fn.captcha = function(valuePass) {
 			spacing:30
 		}
 		if(isHuman){
-			g.fillText("Congradulations",message.x,message.y);
+			g.fillText("Congratulations",message.x,message.y);
 			g.fillText("You're Human",message.x,message.y+message.spacing);
 		}else{
 			g.fillText("Check the box",message.x,message.y);
