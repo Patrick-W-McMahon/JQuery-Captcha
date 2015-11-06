@@ -119,11 +119,7 @@ $.fn.captcha = function(valuePass) {
 	}
 	
 	function isMouseInRect(rect,mouse){
-		var wt = rect.w;
-		var ht = rect.h;
-		var xt = (mouse.x>rect.x&&mouse.x<wt);
-		var yt = (mouse.y>rect.y&&mouse.y<ht);
-		if(xt&&yt){
+		if((mouse.x>rect.x&&mouse.x<rect.x+rect.w)&&(mouse.y>rect.y&&mouse.y<rect.y+rect.h)){
 			return true
 		}
 		return false;
