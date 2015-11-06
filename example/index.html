@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Captcha Test</title>
+	<link href="css/style.css" rel="stylesheet">
+	<script src="js/jquery.js"></script> 
+	<script src="../jquery.captcha.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	
+</head>
+<body>
+	<h1>Captcha Test</h1>
+	<form>
+		<input type="test" />
+		<input id="captcha" type="hidden" />
+		<input type="submit" value="submit"/>
+	</form>
+	
+	<script>
+	$( document ).ready(function() {
+		console.log("ready");
+		$("#captcha").captcha("human");
+	});
+	
+	</script>
+</body>
+</html>
