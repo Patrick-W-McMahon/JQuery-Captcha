@@ -1,11 +1,11 @@
 $.fn.captcha = function(valuePass) {
-	window.requestAnimationFrame = window.requestAnimationFrame || function(callback) { window.setTimeout(callback,16) };
+    window.requestAnimationFrame = window.requestAnimationFrame || function(callback) { window.setTimeout(callback,16) };
     this.wrap("<div class='captcha'></div>");
 	var parent = this.parent();
 	var field = this;
 	var display_id = this.attr('id')+"_display";
 	parent.append("<canvas id='"+display_id+"'> </canvas>");
-	var display = document.getElementById(display_id);//$("#"+display_id);
+	var display = document.getElementById(display_id);
 	display.style.width = "140px";
 	display.style.height = "70px";
 	var isHuman = false;
@@ -100,8 +100,6 @@ $.fn.captcha = function(valuePass) {
 				g.lineWidth = 4;
 				g.stroke();
 				g.fill();
-				
-				
 			}
 		}
 		g.fillStyle=rect.Background;
@@ -119,7 +117,6 @@ $.fn.captcha = function(valuePass) {
 			g.fillText("Check the box",message.x,message.y);
 			g.fillText("if you're human",message.x,message.y+message.spacing);
 		}
-		
 	}
 	
 	function isMouseInRect(rect,mouse){
