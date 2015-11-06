@@ -1,5 +1,4 @@
 $.fn.captcha = function(valuePass) {
-    window.requestAnimationFrame = window.requestAnimationFrame || function(callback) { window.setTimeout(callback,16) };
     this.wrap("<div class='captcha'></div>");
 	var parent = this.parent();
 	var field = this;
