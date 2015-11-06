@@ -75,17 +75,29 @@ $.fn.captcha = function(valuePass) {
 		g.lineWidth = 5;
 		g.stroke();
 		g.fill();
+		var checkboxObj =[
+			{type:"move",x:rect.x+25,y:rect.y+rect.h-8},
+			{type:"line",x:rect.x+rect.w+12,y:rect.y+2},
+			{type:"line",x:rect.x+30,y:rect.y+rect.h-28},
+			{type:"line",x:rect.x+10,y:rect.y+rect.h-50}
+		];
+		
 		if(mouse){
 			if(isMouseInRect(rect,mouse)){
+				g.shadowBlur=24;
+				g.shadowColor="rgba(200,255,0,0.8)";
 				g.fillStyle=checkMark.background;
 				g.strokStyle= checkMark.borderColor;
 				g.beginPath();
-				g.moveTo(rect.x+15,rect.y+rect.h-8);
-				g.lineTo(rect.x+rect.w+12,rect.y+14);
-				g.lineTo(rect.x+20,rect.y+rect.h-20);
-				g.lineTo(rect.x+10,rect.y+rect.h-50);
+				for(i=0;i<checkboxObj.length;i++){
+					if(checkboxObj[i].type=="move"){
+						g.moveTo(checkboxObj[i].x,checkboxObj[i].y);
+					}else if(checkboxObj[i].type=="line"){
+						g.lineTo(checkboxObj[i].x,checkboxObj[i].y);
+					}
+				}
 				g.closePath();
-				g.lineWidth = 3;
+				g.lineWidth = 4;
 				g.stroke();
 				g.fill();
 				
@@ -94,6 +106,7 @@ $.fn.captcha = function(valuePass) {
 		}
 		g.fillStyle=rect.Background;
 		g.font="20px Verdana";
+		g.shadowBlur=0;
 		var message = {
 			x:120,
 			y:60,
