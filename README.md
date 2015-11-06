@@ -13,3 +13,5 @@ Then in your JavaScript you will want to set the field to be a captcha.
 `$("#captcha").captcha("human");` 
 
 The captcha plug-in takes one argument. It's a string that will be the pass value that will be set to the hidden field when the user has been confirmed as a human. This value can be anything you want. You can then test this value on your server side to see if it is correct. If the user has not been confirmed as a human the field will be submitted with no value. If a bot attempts to fill in the field with a value simply ignore the submission as long as it's not matching your accepted string. It's recommended that the accepted string be passed in by ajax and have your JavaScript in an external js file and not embedded into the html page. The example project only has it embedded to keep it simple and show you what you need.
+
+For production use jquery.captcha.min.js
