@@ -1,5 +1,5 @@
 $.fn.captcha = function(valuePass) {
-    this.wrap("<div class='captcha'></div>");
+	this.wrap("<div class='captcha'></div>");
 	var parent = this.parent();
 	var field = this;
 	var display_id = this.attr('id')+"_display";
